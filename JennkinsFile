@@ -1,0 +1,12 @@
+pipline{
+  agent any
+    stages{
+      stage("code"){
+        step{
+          echo "thiis is a decelerative pipeline"
+        }
+      }
+
+    }
+
+}
