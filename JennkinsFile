@@ -1,12 +1,23 @@
-pipline{
-  agent any
-    stages{
-      stage("code"){
-        step{
-          echo "thiis is a decelerative pipeline"
-        }
-      }
-
+pipeline {
+    agent any
+    environment {
+        PATH = "/opt/maven3/bin:$PATH"
     }
-
+    stages {
+        stage('cleanup') {
+            steps {
+                cleanWs()
+            }
+        }
+        stage('clone') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Rolex960/spring-boot-starter'
+            }
+        }
+        stage('Maven Build') {
+            steps {
+                 sh "mvn clean package"
+            }
+        }
+    }
 }
