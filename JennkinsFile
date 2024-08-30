@@ -11,7 +11,7 @@ pipeline {
         }
         stage('checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Rolex960/spring-boot-starter'
+                git branch: 'master', url: 'https://github.com/Rolex960/spring-boot-starter'
             }
         }
         stage('Maven Build') {
