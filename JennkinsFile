@@ -9,7 +9,7 @@ pipeline {
                 cleanWs()
             }
         }
-        stage('clone') {
+        stage('checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Rolex960/spring-boot-starter'
             }
